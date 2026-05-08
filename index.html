@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ancient Egyptians</title>
+    <link rel="icon" href="image/logo.png">
+
+    <link rel="stylesheet" href="css/leon.css">
+    <!-- ملف النومليز ال بيعمل ريندر ل المنتس -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- ملف جوجل فونت -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Work+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- ملف الايكونز -->
+    <!-- https://fontawesome.com/ */ -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- لنك انميشن الاسكرور -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body class="">
+    <div class="cyber-cursor">
+        <div class="cursor-inner">𓂀</div>
+    </div>
+    <div class="cyber-cursor-trail">
+        <div class="trail-inner"></div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div id="intro-screen" class="intro-screen active">
+        <video id="bg-video" src="back.mp4" autoplay loop muted playsinline preload="auto"></video>
+        <div id="bg-overlay"></div>
+
+        <button id="enter-btn" class="cyber-doodle-btn">
+            ENTER <span class="horus-icon">𓂀</span>
+        </button>
+    </div>
+
+    <div id="video-container" class="video-container hidden">
+        <video id="intro-video" src="intro.mp4" playsinline></video>
+    </div>
+
+    <audio id="cinematic-sound" src="sound.mp3" preload="auto"></audio>
+
+    <div id="main-content">
+        <div class="scan-line"></div>
+        <!-- الهيدر -->
+        <div class="header">
+            <div class="container">
+                <img class="logo" src="image/logo.png" alt="Cyber Pharaoh Logo"
+                    onclick="window.scrollTo(0,0); location.reload();">
+            </div>
+        </div>
+        <div class="landing">
+            <div class="intro-text glass-panel" data-tilt-intensity="subtle">
+                <h1 id="typewriter-title">EGYPTIAN Civilization</h1>
+                <p class="neon-text">Ancient Egypt was the preeminent civilization in <br> the Mediterranean world for
+                    almost 30 centuries</p>
+
+                <div class="hero-credits">
+                    <div class="credit-lines">
+                        <span><span class="credit-glyph">𓋹</span> This project was created for the Web course at El
+                            Shorouk Academy <span class="credit-glyph">𓋹</span></span>
+                        <span>Under the supervision of Dr. Mohamed Mostafa</span>
+                        <span><span class="credit-glyph">𓂀</span> With guidance from Eng. Salma Ayman<span
+                                class="credit-glyph">𓂀</span></span>
+                        <span class="designer-credit">Designed by <strong class="designer-name">Khaled Aidia</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services" id="services">
+            <div class="container">
+                <div data-aos="fade-left" data-aos-duration="500">
+                    <h2 class="special-heading">Predynastic</h2>
+                    <p>(c. 5000-3100 B.C.)</p>
+                </div>
+                <div class="services-contant">
+                    <div class="col">
+                        <div class="srv holo-card" data-aos="fade-right" data-aos-delay="0">
+                            <i class="fa-solid fa-palette glow-icon"></i>
+                            <div class="text">
+                                <h3>Predynastic</h3>
+                                <p>There have been few periods in history that have left behind as many indelible marks
+                                    on human culture as Ancient Egypt.</p>
+                            </div>
+                        </div>
+                        <div class="srv holo-card" data-aos="fade-right" data-aos-delay="150">
+                            <i class="fa-brands fa-pied-piper-alt glow-icon"></i>
+                            <div class="text">
+                                <h3>sphinx</h3>
+                                <p>Neolithic (late Stone Age) communities in northeastern Africa exchanged hunting for
+                                    agriculture and made early advances that paved the way for the later development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="srv holo-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fa-solid fa-person-military-to-person glow-icon"></i>
+                            <div class="text">
+                                <h3>Civilization</h3>
+                                <p>Around 3400 B.C., two separate kingdoms were established near the Fertile Crescent,
+                                    an area home to some of the world’s oldest civilizations: the Red Land.</p>
+                            </div>
+                        </div>
+                        <div class="srv holo-card" data-aos="fade-up" data-aos-delay="250">
+                            <i class="fa-solid fa-ankh glow-icon"></i>
+                            <div class="text">
+                                <h3>Egyptians</h3>
+                                <p>A southern king, Scorpion, made the first attempts to conquer the northern kingdom
+                                    around 3200 B.C. A century later, King Menes would subdue the north.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="cinematic-zoom" data-aos-delay="300">
+                        <div class="image">
+                            <img src="image/mountains2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- برتوفوليو -->
+        <div class="Portfolio" id="portfolio">
+            <div class="container">
+                <div data-aos="fade-blur" data-aos-duration="1000">
+                    <h2 class="special-heading">Archaic</h2>
+                    <p>(c. 3100-2686 B.C.)</p>
+                </div>
+                <div class="Portfolio-contant">
+                    <div data-aos="fade-right" data-aos-delay="0">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image/Portfolio1.jpg" alt="">
+                            <div class="info">
+                                <h3>Archaeology</h3>
+                                <p>King Menes founded the capital of ancient Egypt at White Walls (later known as
+                                    Memphis), in the north, near the apex of the Nile River delta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="150">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image/Portfolio2.jpg" alt="">
+                            <div class="info">
+                                <h3>Museums</h3>
+                                <p>The capital would grow into a great metropolis that dominated Egyptian society during
+                                    the Old Kingdom period.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="300">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image//Portfolio3.jpg" alt="">
+                            <div class="info">
+                                <h3>Rescue</h3>
+                                <p>The Archaic Period saw the development of the foundations of Egyptian society,
+                                    including the all-important ideology of kingship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ابوت -->
+        <div class="about" id="about">
+            <div class="container">
+                <div data-aos="fade-blur" data-aos-duration="1000">
+                    <h2 class="special-heading">Kingdom</h2>
+                    <p>(c. 2686-2181 B.C.)</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-contant glass-panel" data-tilt-intensity="medium">
+                        <div class="image" data-aos="cinematic-zoom" data-aos-delay="250">
+                            <img src="image/about.png" alt="">
+                        </div>
+                        <div class="text" data-aos="fade-blur" data-aos-delay="400">
+                            <p>The Old Kingdom began with the third dynasty of pharaohs. Around 2630 B.C., the third
+                                dynasty’s King Djoser asked Imhotep, an architect, priest and healer, to design a
+                                funerary monument for him.</p>
+                            <hr data-aos="zoom-in" data-aos-delay="500">
+                            <p>the result was the world’s first major stone building, the Step-Pyramid at Saqqara, near
+                                Memphis. Egyptian pyramid-building reached its zenith with the construction of the Great
+                                Pyramid at Giza, on the outskirts of Cairo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gods -->
+        <div class="services" id="gods">
+            <div class="container">
+                <div data-aos="fade-blur" data-aos-duration="1000">
+                    <h2 class="special-heading">The Gods</h2>
+                    <p>Divine Rulers of Ancient Egypt</p>
+                </div>
+                <div class="services-contant">
+                    <div class="col" data-aos="fade-right" data-aos-delay="0">
+                        <div class="god-card holo-card" data-tilt-intensity="strong">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <h3>Ra (Sun God)</h3>
+                            <div class="accent-line"></div>
+                            <p>The supreme sun god, creator of the universe and giver of life. Believed to sail across
+                                the sky daily in his solar bark.</p>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="150">
+                        <div class="god-card holo-card" style="margin-top: 40px;" data-tilt-intensity="strong">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h3>Anubis</h3>
+                            <div class="accent-line"></div>
+                            <p>The jackal-headed god of embalming and the dead. He guided souls through the underworld
+                                and weighed their hearts.</p>
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-left" data-aos-delay="300">
+                        <div class="god-card holo-card" data-tilt-intensity="strong">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <h3>Osiris</h3>
+                            <div class="accent-line"></div>
+                            <p>God of the afterlife, death, and resurrection. Murdered by his brother Set but revived to
+                                rule the underworld.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Portfolio" id="pharaohs">
+            <div class="container">
+                <div data-aos="fade-blur" data-aos-duration="1000">
+                    <h2 class="special-heading">Pharaohs</h2>
+                    <p>The Living Gods on Earth</p>
+                </div>
+                <div class="Portfolio-contant">
+                    <div data-aos="fade-right" data-aos-delay="0">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image/Portfolio4.jpg" alt="">
+                            <div class="info">
+                                <h3>Ramses II</h3>
+                                <p>Often regarded as the greatest, most celebrated, and most powerful pharaoh of the New
+                                    Kingdom.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="cinematic-zoom" data-aos-delay="150">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image/Portfolio5.jpg" alt="">
+                            <div class="info">
+                                <h3>Tutankhamun</h3>
+                                <p>The boy king whose nearly intact tomb was discovered in 1922, providing unprecedented
+                                    insights into royal life.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="300">
+                        <div class="card holo-card" data-tilt-intensity="medium">
+                            <img src="image/Portfolio6.jpg" alt="">
+                            <div class="info">
+                                <h3>Hatshepsut</h3>
+                                <p>One of the few female pharaohs, overseeing a period of incredible wealth, monumental
+                                    building, and trade expansion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- فوتر -->
+        <div class="footer">
+            &copy; 2050 <span> (Ancient Egyptians) </span> All Right Reserved | Designed by <span> (Khaled Aidia) </span>
+            </p>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+            once: false,
+            offset: 150,
+        });
+
+        // Scroll Lock Logic for Cinematic Intro
+        function preventScroll(e) { e.preventDefault(); }
+        function preventScrollKeys(e) {
+            if (["Space", "ArrowUp", "ArrowDown", "PageUp", "PageDown"].includes(e.code)) { e.preventDefault(); }
+        }
+        function disableScroll() {
+            window.addEventListener('wheel', preventScroll, { passive: false });
+            window.addEventListener('touchmove', preventScroll, { passive: false });
+            window.addEventListener('keydown', preventScrollKeys, { passive: false });
+        }
+        function enableScroll() {
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('touchmove', preventScroll);
+            window.removeEventListener('keydown', preventScrollKeys);
+        }
+
+        // Lock scroll initially
+        disableScroll();
+
+        const enterBtn = document.getElementById('enter-btn');
+        const introScreen = document.getElementById('intro-screen');
+        const videoContainer = document.getElementById('video-container');
+        const introVideo = document.getElementById('intro-video');
+        const mainContent = document.getElementById('main-content');
+
+        enterBtn.addEventListener('click', () => {
+            window.scrollTo(0, 0); // Ensure at top
+            introScreen.classList.remove('active');
+            introScreen.classList.add('fade-out');
+
+            // Play Cinematic Sound
+            const sound = document.getElementById('cinematic-sound');
+            if (sound && sound.paused) {
+                startAmbientLoop(sound);
+            }
+
+            setTimeout(() => {
+                introScreen.classList.add('hidden'); // Removed from layout flow
+                videoContainer.classList.remove('hidden');
+                videoContainer.classList.add('active');
+                introVideo.play().catch(e => console.error("Video autoplay failed", e));
+            }, 800);
+        });
+
+        // Ambient Audio Engine
+        function startAmbientLoop(sound) {
+            const targetVol = 0.35;
+            const fadeInTime = 500;
+            const fadeOutTime = 300;
+
+            function fadeVolume(audio, start, end, duration) {
+                const startTime = performance.now();
+                const fader = setInterval(() => {
+                    const elapsed = performance.now() - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    audio.volume = start + (end - start) * progress;
+                    if (progress >= 1) clearInterval(fader);
+                }, 16);
+            }
+
+            function playIteration() {
+                sound.currentTime = 0;
+                sound.play().catch(e => console.error("Sound loop failed", e));
+                fadeVolume(sound, 0, targetVol, fadeInTime);
+
+                const scheduleFadeOut = () => {
+                    const duration = sound.duration;
+                    if (duration && !isNaN(duration)) {
+                        setTimeout(() => {
+                            fadeVolume(sound, targetVol, 0, fadeOutTime);
+                        }, (duration * 1000) - fadeOutTime - 50); // slight buffer
+                    }
+                };
+
+                if (sound.readyState >= 1) scheduleFadeOut();
+                else sound.addEventListener('loadedmetadata', scheduleFadeOut, { once: true });
+            }
+
+            sound.addEventListener('ended', playIteration);
+            playIteration();
+        }
+
+        introVideo.addEventListener('ended', () => {
+            videoContainer.classList.remove('active');
+            videoContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                videoContainer.classList.add('hidden'); // Removed from layout flow
+
+                // mainContent already occupies height, just fade it in
+                mainContent.classList.add('fade-in');
+                enableScroll(); // Allow user to scroll now
+
+                AOS.refresh();
+                initTypewriter();
+            }, 800);
+        });
+
+        // Typewriter Effect
+        function initTypewriter() {
+            const title = document.getElementById('typewriter-title');
+            if (!title) return;
+            const text = title.innerText;
+            title.innerHTML = '';
+            let i = 0;
+            title.style.opacity = 1;
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                    title.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 100);
+        }
+
+        // Hieroglyphic Network Animation Effect
+        function initParticles() {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let w = canvas.width = window.innerWidth;
+            let h = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            });
+
+            // Mouse interaction
+            let mouse = { x: -1000, y: -1000 };
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+            window.addEventListener('mouseout', () => {
+                mouse.x = -1000;
+                mouse.y = -1000;
+            });
+
+            const colors = ['rgba(255, 223, 0, ', 'rgba(180, 255, 255, '];
+            const symbols = ['☥', '𓂀', '𓆣', '𓋹', '𓎛', '𓏤', '𓁹'];
+            const particles = [];
+
+            // Determine particle count based on screen size for performance
+            const particleCount = Math.min(Math.floor((w * h) / 8000), 150);
+
+            for (let i = 0; i < particleCount; i++) {
+                // Depth calculation (0.0 to 1.0)
+                const depth = Math.random();
+                const size = depth * 16 + 8; // Size between 8px and 24px
+                const maxOpacity = depth * 0.3 + 0.1; // Opacity between 0.1 and 0.4
+
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: (Math.random() - 0.5) * 0.2,
+                    baseVx: (Math.random() - 0.5) * 0.3,
+                    baseVy: (Math.random() - 0.5) * 0.3,
+                    size: size,
+                    glow: depth * 10 + 5,
+                    colorIndex: Math.floor(Math.random() * colors.length),
+                    symbol: symbols[Math.floor(Math.random() * symbols.length)],
+                    maxOpacity: maxOpacity,
+                    depth: depth
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+
+                    let dx = p.x - mouse.x;
+                    let dy = p.y - mouse.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // Gentle Repulsion
+                    if (distance < 150) {
+                        const force = (150 - distance) / 150;
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+
+                        // Push particles AWAY gently
+                        p.vx += forceDirectionX * force * 0.8;
+                        p.vy += forceDirectionY * force * 0.8;
+                    }
+
+                    // Physics behavior: Apply friction/damping
+                    p.vx *= 0.94;
+                    p.vy *= 0.94;
+
+                    // Restore to natural drift over time
+                    p.vx += (p.baseVx - p.vx) * 0.02;
+                    p.vy += (p.baseVy - p.vy) * 0.02;
+
+                    // Movement
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Edges: Bounce softly
+                    if (p.x < 0) { p.x = 0; p.vx *= -0.8; p.baseVx *= -1; }
+                    if (p.x > w) { p.x = w; p.vx *= -0.8; p.baseVx *= -1; }
+                    if (p.y < 0) { p.y = 0; p.vy *= -0.8; p.baseVy *= -1; }
+                    if (p.y > h) { p.y = h; p.vy *= -0.8; p.baseVy *= -1; }
+
+                    // Draw connections FIRST so they are behind symbols
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dx2 = p.x - p2.x;
+                        let dy2 = p.y - p2.y;
+                        let distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+
+                        if (distance2 < 120) {
+                            // Opacity based on distance and particle depth
+                            let lineOpacity = ((120 - distance2) / 120) * Math.min(p.maxOpacity, p2.maxOpacity);
+                            ctx.beginPath();
+                            ctx.strokeStyle = colors[p.colorIndex] + lineOpacity + ')';
+                            ctx.lineWidth = 0.5 + (p.depth * 0.5);
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Draw Symbol
+                    ctx.font = `${p.size}px 'Orbitron', sans-serif`;
+                    ctx.fillStyle = colors[p.colorIndex] + p.maxOpacity + ')';
+                    ctx.shadowBlur = p.glow;
+
+                    if (p.colorIndex === 0) ctx.shadowColor = 'rgba(255, 223, 0, 0.8)';
+                    else ctx.shadowColor = 'rgba(180, 255, 255, 0.8)';
+
+                    ctx.fillText(p.symbol, p.x, p.y);
+                    // Reset shadow for lines
+                    ctx.shadowBlur = 0;
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+
+        // Initialize particles immediately to show on intro screen
+        initParticles();
+
+        // ----------------------------------------------------
+        // CINEMATIC 3D TILT ENGINE
+        // ----------------------------------------------------
+        function initCinematicTilt() {
+            // Disable on mobile/touch devices for performance and UX
+            if (window.matchMedia("(max-width: 768px)").matches || 'ontouchstart' in window) return;
+
+            const elements = document.querySelectorAll('[data-tilt-intensity]');
+
+            elements.forEach(el => {
+                const intensityStr = el.getAttribute('data-tilt-intensity');
+
+                // Configure intensity multipliers and default resting states
+                let maxTilt = 16;
+                let defaultRotateX = 6;
+                let defaultRotateY = -6;
+
+                if (intensityStr === 'subtle') {
+                    maxTilt = 8;
+                    defaultRotateX = 4;
+                    defaultRotateY = -4;
+                } else if (intensityStr === 'strong') {
+                    maxTilt = 22;
+                    defaultRotateX = 8;
+                    defaultRotateY = -8;
+                }
+
+                // Apply initial resting tilt purely via CSS immediately before JS loop starts
+                el.style.transform = `perspective(1200px) rotateX(${defaultRotateX}deg) rotateY(${defaultRotateY}deg)`;
+
+                // Inject Glare wrapper
+                const glareWrapper = document.createElement('div');
+                glareWrapper.className = 'glare-wrapper';
+                const glare = document.createElement('div');
+                glare.className = 'glare';
+                glareWrapper.appendChild(glare);
+                el.appendChild(glareWrapper);
+
+                // State variables for smooth interpolation (lerp)
+                let currentX = defaultRotateX;
+                let currentY = defaultRotateY;
+                let targetX = defaultRotateX;
+                let targetY = defaultRotateY;
+
+                let currentGlareX = 0;
+                let currentGlareY = 0;
+                let targetGlareX = 0;
+                let targetGlareY = 0;
+                let glareOpacity = 0;
+
+                let isHovering = false;
+                let animationFrameId = null;
+
+                const lerp = (start, end, factor) => start + (end - start) * factor;
+
+                // Apply initial resting tilt
+                el.style.transform = `perspective(1200px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+
+                const updateTransform = () => {
+                    // Dampened inertia (weighted interpolation)
+                    currentX = lerp(currentX, targetX, 0.08);
+                    currentY = lerp(currentY, targetY, 0.08);
+
+                    // Glare moves slightly slower for realistic physical reflection feel
+                    currentGlareX = lerp(currentGlareX, targetGlareX, 0.05);
+                    currentGlareY = lerp(currentGlareY, targetGlareY, 0.05);
+
+                    // Apply to DOM
+                    el.style.transform = `perspective(1200px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+                    glare.style.transform = `translate(-50%, -50%) translate(${currentGlareX}%, ${currentGlareY}%)`;
+
+                    // Stop animation loop safely when settled
+                    const diffX = Math.abs(currentX - targetX);
+                    const diffY = Math.abs(currentY - targetY);
+                    if (!isHovering && diffX < 0.02 && diffY < 0.02) {
+                        currentX = targetX;
+                        currentY = targetY;
+                        el.style.transform = `perspective(1200px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = null;
+                        return;
+                    }
+
+                    animationFrameId = requestAnimationFrame(updateTransform);
+                };
+
+                el.addEventListener('mouseenter', () => {
+                    isHovering = true;
+                    glare.style.opacity = '0.08'; // Extremely subtle cinematic glare
+                    if (!animationFrameId) updateTransform();
+                });
+
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const width = rect.width;
+                    const height = rect.height;
+
+                    // Mouse position relative to center (-1 to 1)
+                    const mouseX = (e.clientX - rect.left - width / 2) / (width / 2);
+                    const mouseY = (e.clientY - rect.top - height / 2) / (height / 2);
+
+                    // Set clamped targets
+                    targetX = -mouseY * maxTilt;
+                    targetY = mouseX * maxTilt;
+
+                    // Glare reflects opposite to tilt
+                    targetGlareX = -mouseX * 40;
+                    targetGlareY = -mouseY * 40;
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    isHovering = false;
+                    glare.style.opacity = '0';
+                    // Return to the unique resting angled state
+                    targetX = defaultRotateX;
+                    targetY = defaultRotateY;
+                    if (!animationFrameId) updateTransform();
+                });
+            });
+        }
+
+        initCinematicTilt();
+
+        // ----------------------------------------------------
+        // CUSTOM CYBER CURSOR ENGINE
+        // ----------------------------------------------------
+        function initCyberCursor() {
+            if (window.matchMedia("(max-width: 768px)").matches || 'ontouchstart' in window) return;
+
+            const cursor = document.querySelector('.cyber-cursor');
+            const trail = document.querySelector('.cyber-cursor-trail');
+
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let trailX = mouseX;
+            let trailY = mouseY;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+            });
+
+            // Smooth Lerp for Trail
+            const lerp = (start, end, factor) => start + (end - start) * factor;
+
+            function updateTrail() {
+                trailX = lerp(trailX, mouseX, 0.15);
+                trailY = lerp(trailY, mouseY, 0.15);
+                trail.style.transform = `translate3d(${trailX}px, ${trailY}px, 0)`;
+                requestAnimationFrame(updateTrail);
+            }
+            updateTrail();
+
+            // Hover interactions
+            const interactables = document.querySelectorAll('a, button, .holo-card, .god-card, .logo, .icon-wrapper, i');
+            interactables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover-active');
+                    trail.classList.add('hover-active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover-active');
+                    trail.classList.remove('hover-active');
+                });
+            });
+
+            // Click Ripple Effect
+            window.addEventListener('mousedown', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'cursor-ripple';
+                ripple.style.left = `${e.clientX}px`;
+                ripple.style.top = `${e.clientY}px`;
+                document.body.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 400); // Clean up after animation
+            });
+        }
+        initCyberCursor();
+
+    </script>
+</body>
+
+</html>
