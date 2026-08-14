@@ -3,7 +3,7 @@
 A modern web experience inspired by Ancient Egyptian Civilization.
 
 ## 🔗 Live Demo
-[View Website](https://web-project-ancient-egyptians.netlify.app/)
+[View Website](https://khaled-aidia.github.io/ancient-egypt-website/)
 
 ## 💻 Technologies Used
 - HTML
